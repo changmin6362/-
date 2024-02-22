@@ -1,0 +1,35 @@
+@import "sharing/styles/global.scss";
+
+.menuContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 10rem;
+  height: 6.4rem;
+  z-index: 999;
+  position: absolute;
+  bottom: 4rem;
+  right: -6rem;
+}
+
+.element-delete {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50%;
+  background-color: #ffffff;
+  z-index: 9999;
+}
+
+.element-add {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50%;
+  background-color: #e7effb;
+  z-index: 9999;
+  color: $color-primary;
+}
