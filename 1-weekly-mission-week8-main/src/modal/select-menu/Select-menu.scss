@@ -1,35 +1,51 @@
 @import "sharing/styles/global.scss";
 
+.containerBackground {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+}
+
 .menuContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: absolute;
   width: 10rem;
   height: 6.4rem;
-  z-index: 999;
-  position: absolute;
-  bottom: 4rem;
+  top: 24rem;
   right: -6rem;
+
+  z-index: 1;
 }
 
 .element-delete {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 50%;
+  position: relative;
+  width: 10rem;
+  height: 3.2rem;
   background-color: #ffffff;
-  z-index: 9999;
+  z-index: 2;
+  &:hover {
+    background-color: #e7effb;
+    color: $color-primary;
+  }
 }
 
 .element-add {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 50%;
-  background-color: #e7effb;
-  z-index: 9999;
-  color: $color-primary;
+  position: relative;
+  width: 10rem;
+  height: 3.2rem;
+  background-color: #ffffff;
+  z-index: 2;
+  &:hover {
+    background-color: #e7effb;
+    color: $color-primary;
+  }
 }

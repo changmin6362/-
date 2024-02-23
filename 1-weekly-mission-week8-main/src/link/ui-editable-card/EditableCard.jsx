@@ -45,10 +45,8 @@ export const EditableCard = ({
         <button className={cx("kebab")} onClick={handleMouseClick}>
           <img src="images/kebab.svg" alt="더보기를 나타내는 점 3개" />
         </button>
-        {isEnable && <SelectMenu onclick={(e) => e.preventDefault()} />}
+        {isEnable && <SelectMenu url={url} mouseClick={handleMouseClick} />}
       </Card>
     </a>
   );
 };
-
-//버튼 누르면 api 페이지로 이동해버림
