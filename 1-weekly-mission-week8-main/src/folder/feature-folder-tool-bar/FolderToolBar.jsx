@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styles from "./FolderToolBar.module.scss";
 import classNames from "classnames/bind";
 import { AddFolderButton } from "folder/ui-add-folder-button";
@@ -13,6 +14,13 @@ export const FolderToolBar = ({ folders, selectedFolderId, onFolderClick }) => {
     ALL_LINKS_ID === selectedFolderId
       ? ALL_LINKS_TEXT
       : folders?.find(({ id }) => id === selectedFolderId);
+
+  const [isEnabled, setEnabled] = useState(false);
+
+  const handleMouseClick = (event) => {
+    event.preventDefault();
+    setEnabled(!isEnabled);
+  };
 
   return (
     <div className={cx("container")}>
@@ -33,7 +41,7 @@ export const FolderToolBar = ({ folders, selectedFolderId, onFolderClick }) => {
         ))}
       </div>
       <div className={cx("add-button")}>
-        <AddFolderButton />
+        <AddFolderButton handleMouseClick={handleMouseClick} />
       </div>
       <h2 className={cx("folder-name")}>{myFolder?.name}</h2>
       {selectedFolderId !== ALL_LINKS_ID && (

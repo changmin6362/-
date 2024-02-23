@@ -45,7 +45,9 @@ export const EditableCard = ({
         <button className={cx("kebab")} onClick={handleMouseClick}>
           <img src="images/kebab.svg" alt="더보기를 나타내는 점 3개" />
         </button>
-        {isEnable && <SelectMenu url={url} mouseClick={handleMouseClick} />}
+        {isEnable && (
+          <SelectMenu url={url} handleMouseClick={handleMouseClick} />
+        )}
       </Card>
     </a>
   );

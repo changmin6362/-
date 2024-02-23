@@ -3,7 +3,7 @@ import classNames from "classnames/bind";
 
 const cx = classNames.bind(styles);
 
-export function Share({ folder }) {
+export function Share({ handleMouseClick, folder }) {
   const handleLinkClick = async () => {
     await navigator.clipboard.writeText(folder?.link);
   };
@@ -18,9 +18,14 @@ export function Share({ folder }) {
   };
 
   return (
-    <div className={cx("background")}>
+    <div className={cx("background")} onClick={handleMouseClick}>
       <div className={cx("modal")}>
-        <img className={cx("closeImg")} src="images/close.png" alt="close" />
+        <img
+          className={cx("closeImg")}
+          src="images/close.png"
+          alt="close"
+          onClick={handleMouseClick}
+        />
         <div className={cx("folderProfile")}>
           <h2 className={cx("header")}>폴더 공유</h2>
           <p className={cx("folderName")}>{folder?.name}</p>
